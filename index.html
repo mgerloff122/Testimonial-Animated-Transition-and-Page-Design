@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Animated Transition and Page Design</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/12e0271730.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="testimonial">
+            <div class="testimonial-text">
+                <div class="user-text">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>
+                        [Product name] had a great [product advantage]. I was a bit worried about [objection], but it wasn’t a problem at all. I love using [product name] when I’m [best use scenario].
+                    </p>
+                    <span>JOHN RAYAN, CEO HUMBLE</span>
+                </div>
+                <div class="user-text active-text">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>
+                        [Business name] was [positive attribute]. The team helped me [problem the business solved]. I had a problem with [key challenge], but they took care of it right away.
+                    </p>
+                    <span>Ronald Reagan, MD Harman</span>
+                </div>
+                <div class="user-text">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>
+                        When we discovered [your company name], they were immediately [company strength]. We saw significant improvements right away and, after [time as a customer], we have seen [measurable benefit].
+                    </p>
+                    <span>Vladimir Lenin, CTO Xiaomi</span>
+                </div>
+                <div class="user-text">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>
+                        I just started using [product or service] and it has been [key benefit]. I feel [emotional response]. I would definitely say [recommendation or response to product/service]
+                    </p>
+                    <span>Greta Thunberg, HR Infoedz</span>
+                </div>
+                <div class="user-text">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>
+                        I visited [business name] and tried [product or service the customer used]. The experience was great, it [advantage enjoyed by the customer]. I’d highly recommend them to anyone.
+                    </p>
+                    <span>Amelia Earhart, TL Amazon</span>
+                </div>
+            </div>
+            <div class="testimonial-pic">
+                <img src="images/user1.png" alt="User Pic" class="user-pic" onclick="showReview()">
+                <img src="images/user2.png" alt="User Pic" class="user-pic active-pic" onclick="showReview()">
+                <img src="images/user3.png" alt="User Pic" class="user-pic" onclick="showReview()">
+                <img src="images/user4.png" alt="User Pic" class="user-pic" onclick="showReview()">
+                <img src="images/user5.png" alt="User Pic" class="user-pic" onclick="showReview()">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let userTexts = document.getElementsByClassName("user-text");
+        let userPics = document.getElementsByClassName("user-pic");
+
+        function showReview() {
+            for(userPic of userPics){
+                userPic.classList.remove("active-pic");
+            }
+            for(userText of userTexts){
+                userText.classList.remove("active-text");
+            }
+            let i = Array.from(userPics).indexOf(event.target);
+
+            userPics[i].classList.add("active-pic");
+            userTexts[i].classList.add("active-text");
+        }
+
+    </script>
+</body>
+</html>
